@@ -6,17 +6,15 @@
     box-sizing: border-box;
 }
 body {
-    // height: 100vh;
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
 }
 .nav {
     background-color: #f4c724;
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: center;
     position: sticky;
-    width: 100%;
     top: 0;
     left: 0;
     z-index: 2;
@@ -24,18 +22,18 @@ body {
     .burger {
         // later, add it to active
         // transform: translateX(270px);
-        margin-left: 10px;
+        margin-left: 15px;
         cursor: pointer;
         color: #616c6f;
         transition: all 0.5s ease-in-out;
     }
     .menu {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
-        background-color: #f0df87;
+        background-color: #f4c724;
         color: #020202;
-        width: 250px;
+        width: 280px;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -54,15 +52,13 @@ body {
 .content {
     // later, add it to active
     // transform: translateX(250px);
-
-    // background-color: forestgreen;
     margin: 5px 10px 0px 10px;
-    // height: calc(100vh - 5px - 50px);
     letter-spacing: 2px;
     word-spacing: 3px;
     text-align: center;
     transition: all 0.5s ease-in-out;
     z-index: 1;
+    overflow-x: hidden;
     h4 {
         padding: 15px;
         text-transform: uppercase;
@@ -76,13 +72,48 @@ body {
 .nav-active {
     .burger {
         // translate not working because of animate.css
-        // transform: translateX(250px);
-        margin-left: calc(250px + 10px);
+        transform: translateX(280px);
+        // margin-left: calc(250px + 10px);
     }
     .menu {
         transform: translateX(0px);
     }
 }
 .content-collapse {
-    transform: translateX(250px);
+    transform: translateX(280px);
+}
+
+// MEDIA QUERY
+@media only screen and (max-width: 470px) {
+    .nav {
+        height: 55px;
+        .menu {
+            width: 200px;
+            li {
+                font-size: 18px;
+            }
+        }
+    }
+    .content {
+        h4 {
+            font-size: 18px;
+            padding: 12px;
+        }
+        p {
+            font-size: 14px;
+            padding: 12px;
+        }
+    }
+    .nav-active {
+        .burger {
+            // translate not working because of animate.css
+            transform: translateX(200px);
+        }
+        .menu {
+            transform: translateX(0px);
+        }
+    }
+    .content-collapse {
+        transform: translateX(200px);
+    }
 }
