@@ -11,6 +11,7 @@ body {
 }
 .nav {
     background-color: #f4c724;
+    width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
@@ -28,7 +29,7 @@ body {
         transition: all 0.5s ease-in-out;
     }
     .menu {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         background-color: #f4c724;
@@ -75,6 +76,7 @@ body {
         transform: translateX(280px);
         // margin-left: calc(250px + 10px);
     }
+
     .menu {
         transform: translateX(0px);
     }
